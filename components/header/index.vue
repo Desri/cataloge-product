@@ -61,7 +61,7 @@
     border-bottom: 1px solid #dddddd;
     .logo {
       color: #000000;
-      font-size: 26px;
+      font-size: 24px;
       font-weight: bold;
     }
     .p-menubar {

@@ -3,71 +3,66 @@
     <img src="@/assets/img/banner.png" class="w-full mb-1 mx-auto" alt="Banner" />
 
     <div class="box px-3 mb-1">
-      <div class="flex align-center justify-between">
-        <h2>
-          Kategory
-        </h2>
-      </div>
       <HomeCategory />
     </div>
 
     <div class="box px-3 mb-1">
       <div class="flex align-center justify-between">
         <h2>
-          Men's Clothing
+          Beauty
         </h2>
-        <NuxtLink to="/category/men's clothing">
+        <NuxtLink to="/category/beauty">
           Selengkapnya
         </NuxtLink>
       </div>
       
       <div class="grid grid-cols-2 gap-4">
         <CardProductSkeleton v-if="isShowLoading" />
-        <CardProduct :data-produk="dataMan" />
+        <CardProduct :data-produk="dataBeauty" />
       </div>
     </div>
 
     <div class="box px-3 mb-1">
       <div class="flex align-center justify-between">
         <h2>
-          Jewelery
+          Fragrances
         </h2>
-        <NuxtLink to="/category/jewelery">
+        <NuxtLink to="/category/fragrances">
           Selengkapnya
         </NuxtLink>
       </div>
       <div class="grid grid-cols-2 gap-4">
         <CardProductSkeleton v-if="isShowLoading" />
-        <CardProduct :data-produk="dataJewelery" />
+        <CardProduct :data-produk="dataFragrances" />
       </div>
     </div>
 
     <div class="box px-3 mb-1">
       <div class="flex align-center justify-between">
         <h2>
-          Electronics
+          Furniture
         </h2>
-        <NuxtLink to="/category/electronics">
+        <NuxtLink to="/category/furniture">
           Selengkapnya
         </NuxtLink>
       </div>
       <div class="grid grid-cols-2 gap-4">
         <CardProductSkeleton v-if="isShowLoading" />
-        <CardProduct :data-produk="dataElectronics" />
+        <CardProduct :data-produk="dataFurniture" />
       </div>
     </div>
 
     <div class="box px-3 mb-1">
       <div class="flex align-center justify-between">
         <h2>
-          Women's Clothing
+          Groceries
         </h2>
-        <NuxtLink to="/category/women's clothing">
+        <NuxtLink to="/category/groceries">
           Selengkapnya
         </NuxtLink>
       </div>
       <div class="grid grid-cols-2 gap-4">
-        <CardProduct :data-produk="dataWomen" />
+        <CardProduct :data-produk="dataGroceries" />
       </div>
     </div>
   </div>
@@ -75,26 +70,26 @@
 
 <script setup lang="ts">
   const isShowLoading = ref<boolean>(true)
-  const dataMan = ref()
-  const dataJewelery = ref()
-  const dataElectronics = ref()
-  const dataWomen = ref()
+  const dataBeauty = ref()
+  const dataFragrances = ref()
+  const dataFurniture = ref()
+  const dataGroceries = ref()
 
   const store = useProductsStore()
-  const { listMan, listJewelery, listElectronics, listWomen } = storeToRefs(store)
+  const { listProductBeauty, listProductFragrances, listProductFurniture, listProductGroceries } = storeToRefs(store)
 
   onMounted(async () => {
-    store.getMan()
-    store.getJewelery()
-    store.getElectronics()
-    store.getWomen()
+    store.getProductBeauty('4')
+    store.getFragrances('4')
+    store.getFurniture('4')
+    store.getGroceries('4')
     isShowLoading.value = false
   });
 
-  dataMan.value = listMan
-  dataJewelery.value = listJewelery
-  dataElectronics.value = listElectronics
-  dataWomen.value = listWomen
+  dataBeauty.value = listProductBeauty
+  dataFragrances.value = listProductFragrances
+  dataFurniture.value = listProductFurniture
+  dataGroceries.value = listProductGroceries
 </script>
 
 <style lang="scss">

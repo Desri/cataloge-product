@@ -15,10 +15,8 @@
 <script setup lang="ts">
   const isShowLoading = ref<boolean>(true)
   const dataCategoryProduct = ref()
-
   const store = useProductsStore()
   const { listCategoryProduct } = storeToRefs(store)
-
   const { slug } = useRoute().params
 
   onMounted(async () => {

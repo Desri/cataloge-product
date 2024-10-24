@@ -1,14 +1,22 @@
 <template>
   <div>
-    <div class="list-category">
+    <div class="flex align-center justify-between">
+      <h2>
+        Kategory
+      </h2>
+    </div>
+    <div v-if="listCategory" class="list-category">
       <ul>
-        <li v-for="(data, index) in listCategory" :key="index" class="text-center">
-          <NuxtLink to="/#">
+        <li v-for="(data, index) in listCategory.slice(0,8)" :key="index" class="text-center mb-1">
+          <NuxtLink :to="`/category/${data.slug}`">
             <div class="icon">
               <Jewellery v-if="index === 1" />
               <Bridal v-if="index === 3" />
+              <Makeup v-if="data.slug === 'beauty'" class="beauty" />
             </div>
-            {{ data }}
+            <p>
+              {{ data.name }}
+            </p>
           </NuxtLink>
         </li>
       </ul>
@@ -17,14 +25,13 @@
 </template>
 
 <script setup lang="ts">
-  import { Jewellery, Bridal } from '@/icons'
+  import { Jewellery, Bridal, Makeup } from '@/icons'
   const store = useProductsStore()
   const { listCategory } = storeToRefs(store)
 
   onMounted(async () => {
     store.getCategory()
   });
-
 </script>
 
 <style lang="scss">
@@ -42,6 +49,10 @@
           font-weight: normal;
           font-size: 14px;
           text-transform: capitalize;
+          p {
+            line-height: 13px;
+            margin: 0px;
+          }
           .icon {
             background: #00be7e;
             text-align: center;
@@ -55,6 +66,11 @@
               width: 40px;
               height: 40px;
             }
+          }
+        }
+        .icon {
+          .beauty {
+            width: 31px;
           }
         }
       }

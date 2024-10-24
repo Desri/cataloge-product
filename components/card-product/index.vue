@@ -10,7 +10,7 @@
     }"
   >
     <template #header>
-      <img alt="user header" :src="data.image" />
+      <img :alt="data.title" :src="data.thumbnail" />
     </template>
     <template #title>
       <NuxtLink :to="`/detail/${data.id}`">
