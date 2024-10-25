@@ -11,6 +11,9 @@
   >
     <template #header>
       <img :alt="data.title" :src="data.thumbnail" />
+      <!-- <div>
+        <Hearth />
+      </div> -->
     </template>
     <template #title>
       <NuxtLink :to="`/detail/${data.id}`">
@@ -29,6 +32,7 @@
 </template>
 
 <script setup lang="ts">
+  // import { Hearth } from '@/icons'
   const props = defineProps({
     dataProduk: {
       type: Array,
@@ -40,6 +44,7 @@
 
 <style lang="scss">
   .p-card {
+    border: 1px solid #d5d5d5;
     img {
       width: 100%;
       height: 120px;

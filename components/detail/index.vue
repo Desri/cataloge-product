@@ -7,9 +7,17 @@
           {{ detailProduct.title }}
         </h1>
         <div class="mb-1 flex align-center rating">
-          <Rating /> {{ detailProduct.rating }}
+          <div class="flex align-center">
+            <Rating /> {{ detailProduct.rating }} <span>({{ detailProduct.reviews.length }} rating)</span>
+          </div>
+          <div class="flex align-center stock">
+            <span>•</span>
+            <div class="flex">
+              Stock<span>{{ detailProduct.stock }}</span>
+            </div>
+          </div>
         </div>
-        <span>
+        <span class="price">
           ${{ detailProduct.price }}
         </span>
         <p>
@@ -48,6 +56,28 @@
         color: #dbdb25;
         margin-right: 4px;
       }
+      span {
+        margin-left: 6px;
+        font-size: 15px;
+        color: #818181;
+      }
+      .stock {
+        span {
+          margin-left: 4px;
+          margin-right: 4px;
+        }
+        .flex {
+          span {
+            padding-top: 1.5px;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+    .price {
+      font-size: 18px;
+      font-weight: 600;
+      color: #3b3b3b;
     }
   }
 </style>
