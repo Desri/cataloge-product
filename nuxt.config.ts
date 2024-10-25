@@ -10,9 +10,7 @@ export default defineNuxtConfig({
           content: 'Catalogue product popular'
         }
       ],
-      link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
-      ]
+      link: []
     }
   },
   runtimeConfig: {

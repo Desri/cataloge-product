@@ -10,9 +10,14 @@
         <li v-for="(data, index) in listCategory.slice(0,8)" :key="index" class="text-center mb-1">
           <NuxtLink :to="`/category/${data.slug}`">
             <div class="icon">
-              <Jewellery v-if="index === 1" />
-              <Bridal v-if="index === 3" />
-              <Makeup v-if="data.slug === 'beauty'" class="beauty" />
+              <Fragrances v-if="data.slug === 'fragrances'" class="fragrances" />
+              <Groceries v-if="data.slug === 'groceries'" class="icon-svg" />
+              <Beauty v-if="data.slug === 'beauty'" class="icon-svg" />
+              <Furniture v-if="data.slug === 'furniture'" class="icon-svg" />
+              <Laptop v-if="data.slug === 'laptops'" class="icon-svg" />
+              <homeDecoration v-if="data.slug === 'home-decoration'" class="icon-svg" />
+              <kitchenAccessories v-if="data.slug === 'kitchen-accessories'" class="icon-svg" />
+              <mensShirts v-if="data.slug === 'mens-shirts'" class="icon-svg" />
             </div>
             <p>
               {{ data.name }}
@@ -25,7 +30,7 @@
 </template>
 
 <script setup lang="ts">
-  import { Jewellery, Bridal, Makeup } from '@/icons'
+  import { Groceries, Beauty, Furniture, Laptop, Fragrances, homeDecoration, kitchenAccessories, mensShirts } from '@/icons'
   const store = useProductsStore()
   const { listCategory } = storeToRefs(store)
 
@@ -71,6 +76,12 @@
         .icon {
           .beauty {
             width: 31px;
+          }
+          .icon-svg {
+            width: 26px;
+          }
+          .fragrances {
+            width: 23px;
           }
         }
       }

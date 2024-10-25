@@ -11,9 +11,9 @@
   >
     <template #header>
       <img :alt="data.title" :src="data.thumbnail" />
-      <!-- <div>
+      <div class="box-icon-hearth">
         <Hearth />
-      </div> -->
+      </div>
     </template>
     <template #title>
       <NuxtLink :to="`/detail/${data.id}`">
@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-  // import { Hearth } from '@/icons'
+  import { Hearth } from '@/icons'
   const props = defineProps({
     dataProduk: {
       type: Array,
@@ -44,12 +44,30 @@
 
 <style lang="scss">
   .p-card {
+    position: relative;
     border: 1px solid #d5d5d5;
+    .box-icon-hearth {
+      right: 5px;
+      width: 32px;
+      height: 32px;
+      position: absolute;
+      border-radius: 50%;
+      text-align: center;
+      background-color: rgba(35,31,32,.3);
+      top: 5px;
+      svg {
+        width: 26px;
+        position: relative;
+        top: 3px;
+        color: #ffffff;
+      }
+    }
     img {
       width: 100%;
       height: 120px;
       object-fit: cover;
       aspect-ratio: 1 / 1;
+      // position: absolute;
     }
   }
   .card-body {

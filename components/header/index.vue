@@ -57,6 +57,9 @@
 
 <style lang="scss" scoped>
   header {
+    position: sticky;
+    top: 0px;
+    z-index: 999;
     background-color: #ffffff;
     border-bottom: 1px solid #dddddd;
     .logo {

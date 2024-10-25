@@ -3,7 +3,7 @@
     <div class="boxNavigation py-1">
       <div class="flex">
         <div class="mx-3 text-center">
-          <NuxtLink to="/#">
+          <NuxtLink to="/">
             <div class="icon">
               <i class="pi pi-home"></i>
             </div>
@@ -11,7 +11,7 @@
           </NuxtLink>
         </div>
         <div class="mx-3 text-center">
-          <NuxtLink to="/#">
+          <NuxtLink to="#">
             <div class="icon">
               <i class="pi pi-shopping-bag"></i>
             </div>
@@ -19,7 +19,7 @@
           </NuxtLink>
         </div>
         <div class="mx-3 text-center">
-          <NuxtLink to="/#">
+          <NuxtLink to="#">
             <div class="icon">
               <i class="pi pi-receipt"></i>
             </div>
@@ -27,7 +27,7 @@
           </NuxtLink>
         </div>
         <div class="mx-3 text-center">
-          <NuxtLink to="/#">
+          <NuxtLink to="#">
             <div class="icon">
               <i class="pi pi-user"></i>
             </div>
